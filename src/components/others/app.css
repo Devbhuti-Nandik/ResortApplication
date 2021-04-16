@@ -1,0 +1,665 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mainWhite:#fff;
+    --offWhite:#f7f7f7;
+    --serviceColor:rgb(192, 189, 189);
+    --mainBlack:#222;
+    --primaryColor:#af9a7d;
+    --darkGrey: #cfcfcf;
+    --errorMessageColor:#ff3333;
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+    --mainTransition:all 0.1s linear;
+    --mainSpacing: 3px;
+   
+}
+
+/*Body CSS*/
+ body{
+    padding-top: 42px;
+}
+ /* Primary Button CSS*/
+ .primary-btn{
+     display: inline-block;
+     text-decoration: none;
+     letter-spacing: var(--mainSpacing);
+     background-color: var(--primaryColor);
+     color: var(--mainBlack);
+     border: 3px solid var(--primaryColor);
+     transition: var(--mainTransition);
+     cursor: pointer;
+     margin: 0.7rem auto;
+     padding: 0.4rem 0.9rem;
+ }
+ .primary-btn:hover{
+     background-color: transparent;
+     color: var(--primaryColor);
+     font-weight: bolder;
+ }
+ /*End of primary-btn CSS*/
+
+/*Navbar CSS*/
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 9vh;
+    background-color: var(--offWhite);
+    z-index: 1;
+}
+.nav-heading{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 9vh;
+}
+.nav-links{
+    width: 50%;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: var(--mainTransition);
+    list-style: none;
+    text-decoration: none;
+}
+.nav-links a{
+    font-family: 'Lato', sans-serif;
+    color: var(--mainBlack);
+    transition: var(--mainTransition);
+    padding: 1rem 0;
+    letter-spacing: var(--mainSpacing);
+}
+.nav-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.nav-icon{
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+}
+.nav-links a, a:hover,a:focus, a:active{
+    text-decoration: none;
+}
+.nav-links a:hover{
+    color: var(--primaryColor);
+}
+.show-nav{
+    height: 80px;
+    transition: var(--mainTransition);
+}
+@media screen and (min-width:768px){
+    .nav-btn{
+        display: none;
+    }
+    .nav-links{
+        height: auto;
+        display: flex;
+    }
+    .nav-links a{
+        margin: 0.1rem;
+        padding: 0.5rem 0;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1800px){
+    .nav-logo{
+        width: 12rem;
+    }
+}
+@media only screen and (min-width: 200px) and (max-width: 1000px){
+    .nav-logo{
+        width: 10rem;
+    }
+}
+/*End of Navbar CSS*/
+
+/*Banner CSS*/
+.banner{
+    display: inline-block;
+    padding: 2rem 7rem;
+    color:var(--mainWhite);
+    background-color: rgba(0, 0, 0, 0.5);
+    letter-spacing: var(--mainSpacing);
+    text-align: center;
+    text-transform: capitalize;
+}
+.banner h1{
+    font-size: 3rem;
+    font-family:'Source Sans Pro', sans-serif;
+}
+.banner-div{
+    height: 3px;
+    width: 7rem;
+    background-color: var(--primaryColor);
+    margin: 0.7rem auto;
+}
+.banner-rooms{
+    padding: 2rem 7rem;
+}
+@media only screen and (min-width: 200px) and (max-width: 800px){
+    .banner{
+        padding: 2rem 3rem;
+    }
+    .banner h1{
+        font-size: 3.5rem;
+    }
+}
+/*End of Banner CSS*/
+
+/*Loading Component CSS*/
+.loading{
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 3rem;
+}
+/*End of Loading Component CSS*/
+
+/*Hero Component CSS*/
+.hero-home,.hero-room,.hero-singleRoom,.hero-error{
+    background-image: url("../images/hero1.jpg"),linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    min-height: 94.5vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-room{
+    background-image: url("../images/hero2.jpg"),linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    min-height: 60vh;
+}
+.hero-singleRoom{
+    background-image: url("../images/hero3.jpg"),linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    min-height: 60vh;
+}
+/*End of Hero Component CSS*/
+
+/*Heading Component CSS*/
+.heading{
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.heading h4{
+    font-size: 2rem;
+    letter-spacing: var(--mainSpacing);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+.heading div{
+    width: 5rem;
+    height: 5px;
+    margin: 0 auto;
+    background: var(--primaryColor);
+}
+/*End of Heading Component CSS*/
+
+/*Services Component CSS*/
+.services{
+    width: 100%;
+    background-color: var(--darkGrey);
+    text-align: center;
+    padding: 3rem 0;
+}
+.items{
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 50px;
+}
+.item-span{
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.item-head{
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family:cursive;
+    padding-bottom: 0.5rem;
+    letter-spacing: var(--mainSpacing);
+}
+.item-content{
+    margin: 0 auto;
+    width: 70%;
+}
+@media only screen and (min-width: 800px) and (max-width: 1250px){
+    .items{
+        width: 90vw;
+    }
+}
+/*End of Services CSS*/
+
+/*Featured Room Component CSS*/
+.featured-rooms{
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+}
+.featured-rooms-items{
+    width: 90vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 50px;
+}
+@media only screen and (min-width: 800px) and (max-width: 1250px){
+    .featured-rooms-items{
+        width: 90vw;
+    }
+}
+/*End of Featured Room CSS*/
+
+/*Room Component CSS*/
+.room{
+    box-shadow: var(--lightShadow);
+    transition: var(--mainTransition);
+}
+.room:hover{
+    box-shadow: var(--darkShadow);
+}
+.img-container{
+    position: relative;
+}
+.img-container img{
+    width: 100%;
+    display: block;
+    transition: var(--mainTransition);
+}
+.img-price{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    font-size: 2.5rem;
+    box-shadow:var(--lightShadow);
+    border-bottom-right-radius: 1rem;
+    padding: 0 0.5rem;
+    letter-spacing: var(--mainSpacing);
+    transition: var(--mainTransition);
+    font-family: serif;
+}
+.img-price-duration{
+    font-size: 0.8rem;
+    font-family: monospace;
+    padding-bottom: 0.5rem;
+}
+.room-link{
+    position: absolute;
+    top: 35%;
+    left: 35.5%;
+    transform: scale(0);
+    transition: var(--mainTransition);
+    text-align: center;
+}
+.roomImg-info{
+    position: block;
+    background-color: var(--darkGrey);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-family:fantasy;
+}
+.img-container:hover .room-link{
+    transform: scale(1);
+}
+.img-container:hover img{
+    opacity: 0.3;
+}
+/*End of Room Component CSS*/
+
+/*Single Room Component CSS*/
+.hero-error{
+    min-height: 94.5vh;
+}
+.single-room{
+    width: 100%;
+    padding: 5rem 0 0 0;
+}
+.single-roomImg{
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 50px;
+
+}
+.single-roomImg img:hover{
+    transform: scale(1.2);
+    transition: var(--mainTransition);
+    cursor: zoom-in;
+}
+.single-roomImg img{
+    display: block;
+    width: 100%;
+}
+.single-room-details{
+    width: 80vw;
+    margin: 1rem auto 3rem 4.5rem;
+}
+.single-roomDetails{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    
+}
+.single-roomDesc{
+    margin:0;
+    width: 40vw;
+}
+.single-roomDesc h3{
+    font-size: 1.5rem;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: var(--mainSpacing);
+    text-transform: capitalize;
+    
+}
+.single-roomDesc p{
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5rem;
+}
+.single-roomInfo{
+    margin:0;
+    width: 40vw;
+}
+.single-roomInfo h3{
+    font-size: 1.5rem;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: var(--mainSpacing);
+    text-transform: capitalize;
+    margin-left: 8rem;
+}
+.single-roomInfo h6{
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    line-height: 2rem;
+    text-transform: capitalize;
+    margin-left: 8rem;
+    letter-spacing: var(--mainSpacing);
+}
+.single-room-extras{
+    width: 80vw;
+    margin: 0 auto 3rem 4.5rem;
+}
+.single-room-extras h3{
+    text-transform: capitalize;
+    font-family: 'Kanit',sans-serif;
+    letter-spacing: var(--mainSpacing);
+    font-size: 1.5rem;
+}
+.single-room-extras-list{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    padding: 0.8rem 0;
+    font-family: 'Lato',sans-serif;
+    font-size: 1rem;
+    text-transform: capitalize;
+    line-height: 1.5rem;
+}
+@media only screen and (min-width: 800px) and (max-width: 950px){
+    .single-roomDetails{
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    }
+    .single-roomInfo{
+        width: 40vw;
+        
+    }
+
+}
+@media only screen and (min-width: 200px) and (max-width: 799px){
+    .single-roomDesc{
+        margin-top: 0.5rem;
+        
+    }
+    .single-roomDesc h3{
+        font-size: 2rem;
+    }
+    .single-roomDesc p{
+        font-size: 1.1rem;
+    }
+    .single-room-details{
+        text-align: center;
+        margin: auto;
+    }
+    .single-roomDesc{
+        width: 100%;
+    }
+    .single-roomInfo{
+        width: 100%;
+    }
+    .single-roomInfo h3{
+        margin: 0;
+        font-size: 2rem;
+    }
+    .single-roomInfo h6{
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    .single-room-extras{
+        text-align: center;
+        margin: 1.5rem auto;
+    }
+    .single-room-extras h3{
+        font-size: 2rem;
+    }
+    .single-room-extras-list li{
+        font-size: 1.1rem;
+    }
+
+}
+/*End of SingleRoom CSS*/
+
+/*RoomList Component CSS*/
+.error-message{
+    margin: 5rem auto;
+    text-align: center;
+    font-family: 'Kanit',sans-serif;
+    font-size: 2rem;
+    letter-spacing: var(--mainSpacing);
+    color:var(--errorMessageColor);
+}
+.room-list{
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;   
+}
+.room-listContainer{
+    width: 90vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 30px;
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1250px){
+    .room-listContainer{
+        width: 90vw;
+    }
+}
+/*End of Room List CSS*/
+
+/*Room Filter CSS*/
+.room-filter{
+    width: 100%;
+    padding: 2rem 0;
+}
+.form-filter{
+    width: 90vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 30px;
+}
+.form-type{
+    text-transform: capitalize;
+}
+.form-type label{
+    display: block;
+    letter-spacing: var(--mainSpacing);
+    margin-bottom: 0.2rem;
+}
+.form-type select{
+    width: 100%;
+    background: transparent;
+    font-size: 1rem;
+}
+.form-capacity{
+    text-transform: capitalize;
+}
+.form-capacity label{
+    display: block;
+    letter-spacing: var(--mainSpacing);
+    margin-bottom: 0.2rem;
+}
+.form-capacity select{
+    width: 100%;
+    background: transparent;
+    font-size: 1rem;
+}
+.form-price{
+    text-transform: capitalize;
+}
+.form-price label{
+    display: block;
+    letter-spacing: var(--mainSpacing);
+    margin-bottom: 0.2rem;
+}
+.form-price input{
+    width: 100%;
+    background: transparent;
+    font-size: 1rem;
+}
+.form-size{
+    text-transform: capitalize;
+}
+.form-size label{
+    display: block;
+    letter-spacing: var(--mainSpacing);
+    margin-bottom: 0.2rem;
+}
+.form-size select{
+    width: 100%;
+    background: transparent;
+    font-size: 1rem;
+}
+
+.form-checkbox{
+    text-transform: capitalize;
+}
+.form-breakfast-pets label{
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    letter-spacing: var(--mainSpacing);
+}
+.filter-main{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: -5%;
+}
+.filter-label{
+    height: auto;
+    margin: -2% auto;
+    padding: 10px;
+    position: relative;
+}
+.filter-label h2{
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: var(--mainSpacing);
+}
+.filter-div{
+    width: 2.5rem;
+    height: 5px;
+    margin: 0.5rem auto;
+    background-color: var(--primaryColor);
+}
+.filter-label li{
+    display: inline-block;
+    padding: 0.5rem;
+    margin:12px;
+    font-size: 1rem;
+    border-radius: 10%;
+    font-family: 'Kanit',sans-serif;
+    background-color: var(--offWhite);
+    transition: var(--mainTransition);
+}
+.filter-label li:hover{
+    color: var(--primaryColor);
+    font-weight: bold;
+    text-shadow: var(--darkShadow);
+}
+button.filter-btn{
+    position: absolute;
+    color: black;
+    margin-left: -15px;
+    margin-top: -5px;
+    background-color: white;
+    border: none;
+    width: 0px;
+    height: 0px;
+    border-radius: 0%;
+    cursor: pointer;
+    outline: none;
+}
+
+@media only screen and (min-width: 1000px){
+    .filter-label{
+        width: 47%;
+    }
+
+}
+@media only screen and (min-width: 800px) and (max-width: 999px){
+    .filter-label{
+        width: 65%;
+    }
+
+}
+@media only screen and (min-width: 200px) and (max-width: 799px){
+    .filter-label{
+        width: 80%;
+    }
+
+}
+/*End of Room Filter CSS*/
+
+/*Footer Component CSS*/
+.footer-one {
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: var(--mainBlack);
+  }
+  
+.footer-one p {
+    color:var(--mainWhite);
+    font-weight: bold;
+    padding-top: 0.5rem;
+  }
+ /*End of Footer Component CSS*/ 
